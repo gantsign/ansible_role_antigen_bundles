@@ -1,5 +1,41 @@
 ---
 - name: Converge
   hosts: all
+
+  pre_tasks:
+    - name: create test users
+      become: yes
+      user:
+        name: '{{ item }}'
+        home: '/home/{{ item }}'
+        createhome: yes
+      with_items:
+        - test_usr1
+        - test_usr2
+        - test_usr3
+
   roles:
     - role: ansible_role_antigen_bundles
+      users:
+        - username: test_usr1
+          antigen_bundles:
+            - name: git
+            - name: ant
+              url: robbyrussell/oh-my-zsh
+              location: plugins/ant
+        - username: test_usr2
+          antigen_bundles:
+            - name: mvn
+              args:
+                - '--no-local-clone'
+              env:
+                ENV_TEST2: 'testValue2'
+            - name: gradle
+              url: https://example.com/gradle.git
+              branch: master
+              tag: '1.0'
+              args:
+                - '--no-local-clone'
+              env:
+                ENV_TEST3: 'testValue3'
+        - username: test_usr3
