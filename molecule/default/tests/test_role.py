@@ -6,8 +6,8 @@ testinfra_hosts = testinfra.utils.ansible_runner.AnsibleRunner(
     os.environ['MOLECULE_INVENTORY_FILE']).get_hosts('all')
 
 
-def test_bundle_with_url_config(File):
-    bundle = File('/home/test_usr1/.antigen-etc/bundle.d/git.zsh')
+def test_bundle_with_url_config(host):
+    bundle = host.file('/home/test_usr1/.antigen-etc/bundle.d/git.zsh')
     assert bundle.exists
     assert bundle.is_file
     assert bundle.user == 'test_usr1'
@@ -22,8 +22,8 @@ antigen bundle \
 '''.strip()
 
 
-def test_bundle_with_location_config(File):
-    bundle = File('/home/test_usr1/.antigen-etc/bundle.d/ant.zsh')
+def test_bundle_with_location_config(host):
+    bundle = host.file('/home/test_usr1/.antigen-etc/bundle.d/ant.zsh')
     assert bundle.exists
     assert bundle.is_file
     assert bundle.user == 'test_usr1'
@@ -39,8 +39,8 @@ antigen bundle \
 '''.strip()
 
 
-def test_bundle_with_args_and_env_config(File):
-    bundle = File('/home/test_usr2/.antigen-etc/bundle.d/mvn.zsh')
+def test_bundle_with_args_and_env_config(host):
+    bundle = host.file('/home/test_usr2/.antigen-etc/bundle.d/mvn.zsh')
     assert bundle.exists
     assert bundle.is_file
     assert bundle.user == 'test_usr2'
@@ -58,8 +58,8 @@ antigen bundle \
 '''.strip()
 
 
-def test_bundle_with_tag_config(File):
-    bundle = File('/home/test_usr2/.antigen-etc/bundle.d/gradle.zsh')
+def test_bundle_with_tag_config(host):
+    bundle = host.file('/home/test_usr2/.antigen-etc/bundle.d/gradle.zsh')
     assert bundle.exists
     assert bundle.is_file
     assert bundle.user == 'test_usr2'
