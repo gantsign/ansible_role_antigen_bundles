@@ -1,13 +1,15 @@
 ---
 - name: create bundle config directories for users
   become: yes
-  become_user: '{{ item.username }}'
+  become_user: '{{ user.username }}'
   file:
     path: '~/.antigen-etc/bundle.d'
     state: directory
     mode: 'u=rwx,go=rx'
-  when: item.antigen_bundles is defined
+  when: user.antigen_bundles is defined
   with_items: '{{ users }}'
+  loop_control:
+    loop_var: user
 
 - name: write bundle config for users
   become: yes
