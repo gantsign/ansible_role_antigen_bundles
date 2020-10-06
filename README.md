@@ -17,7 +17,7 @@ configured Antigen for the same user) for this role to work.
 Requirements
 ------------
 
-* Ansible >= 2.7
+* Ansible >= 2.8
 
 * Linux Distribution
 
