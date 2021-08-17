@@ -1,7 +1,7 @@
 Ansible Role: Antigen Bundles
 =============================
 
-[![Build Status](https://travis-ci.com/gantsign/ansible_role_antigen_bundles.svg?branch=master)](https://travis-ci.com/gantsign/ansible_role_antigen_bundles)
+[![Tests](https://github.com/gantsign/ansible_role_antigen_bundles/workflows/Tests/badge.svg)](https://github.com/gantsign/ansible_role_antigen_bundles/actions?query=workflow%3ATests)
 [![Ansible Galaxy](https://img.shields.io/badge/ansible--galaxy-gantsign.antigen__bundles-blue.svg)](https://galaxy.ansible.com/gantsign/antigen_bundles)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/gantsign/ansible_role_antigen_bundles/master/LICENSE)
 
