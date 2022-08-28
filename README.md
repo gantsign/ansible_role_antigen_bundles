@@ -14,6 +14,14 @@ to conditionally install particular bundles.
 [gantsign.antigen](https://galaxy.ansible.com/gantsign/antigen) role (and
 configured Antigen for the same user) for this role to work.
 
+:thumbsdown: Deprecation Notice :thumbsdown:
+--------------------------------------------
+The last Antigen release was
+[v2.2.3](https://github.com/zsh-users/antigen/releases/tag/v2.2.3) on 4 Jan
+2018. Since Antigen appears to no longer be maintained, we recommend against
+using this role. This role will continue to be maintained until such time as
+GantSign migrates to a different Zsh plugin manager.
+
 Requirements
 ------------
 
